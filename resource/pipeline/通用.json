@@ -1,0 +1,96 @@
+{
+    "进入主页":{
+        "next":[
+            "主界面",
+            "点击签到",
+            "登录界面",
+            "活动公告",
+            "下载资源",
+            "启动游戏"
+
+        ]
+    },
+    "启动游戏": {
+        "action": "StartApp",
+        "package": "com.feimo.hazeworld.mumu",
+        "on_error":"进入主页",
+        "next":[
+            "下载资源",
+            "活动公告"
+        ]
+    },
+    "下载资源":{
+        "recognition":"OCR",
+        "roi":[384, 228, 504, 121],
+        "expected":"下载",
+        "action":"Click",
+        "target":[698, 414, 220, 38],
+        "next":[
+            "活动公告",
+            "下载资源"
+        ]
+    },
+    "活动公告":{
+        "recognition":"OCR",
+        "expected":"公告",
+        "roi":[389,61,427,57],
+        "action":"Click",
+        "target":[499,17,206,25],
+        "next":[
+            "登录界面",
+            "活动公告"
+        ]
+    },
+    "登录界面":{
+        "recognition": "TemplateMatch",
+        "template": "切换账号.png",
+             "roi":[1138,15,132,85]
+        ,
+        "action":"Click",
+        "target":[569,555,143,73],
+        "next":[
+            "点击签到",
+            "主界面",
+            "登录界面"
+        ]
+    },
+    "点击签到":{
+        "recognition":"OCR",
+        "expected":"签到",
+        "roi":[1054,604,217,48],
+        "action":"Click",
+        "next":[
+            "获得资源",
+            "签到完成",
+            "主界面",
+            "点击签到"
+        ]
+    },
+    "获得资源":{
+        "recognition":"OCR",
+        "expected":"获得资源",
+        "action":"Click",
+        "target":[519,15,133,59],
+        "next":[
+            "签到完成",
+            "获得资源"
+        ]
+    },
+    "签到完成":{
+        "recognition":"OCR",
+        "expected":"已签到",
+        "roi":[1061,605,194,44],
+        "action":"Click",
+        "target":[16,22,142,33],
+        "next":[
+            "主界面",
+            "签到完成"
+        ]
+
+    },
+    "主界面":{
+        "recognition": "TemplateMatch",
+        "template": "设置.png",
+         "roi":[1133,8,143,61]
+    }
+}

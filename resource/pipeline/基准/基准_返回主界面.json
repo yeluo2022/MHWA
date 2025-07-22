@@ -1,0 +1,22 @@
+{
+    "基准_返回主界面": {
+        "next": ["基准_完成登录", "基准_已经登录"],
+        "interrupt": ["基准_加载中", "基准_基建_退出基建", "基准_返回首页", "基准_获取物资"]
+    },
+    "基准_返回首页": {
+        "recognition": "TemplateMatch",
+        "threshold": 0.95,
+        "roi": [252, 17, 128, 44],
+        "template": "基准/基准_返回首页.png",
+        "action": "Click",
+        "post_delay": 1000
+    },
+    "基准_获取物资": {
+        "recognition": "OCR",
+        "expected": ["获取物资"],
+        "roi": [529, 70, 226, 87],
+        "action": "Click",
+        "target": [633, 589, 63, 67],
+        "post_delay": 1000
+    }
+}

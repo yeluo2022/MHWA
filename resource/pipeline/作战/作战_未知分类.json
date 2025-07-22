@@ -1,0 +1,23 @@
+{
+    "作战_周本黑胶获取_进入会客间_切换维度": {
+        "recognition": "OCR",
+        "expected": ["维度III"],
+        "roi": [113, 549, 96, 40],
+        "action": "Click",
+        "post_delay": 1000
+    },
+    "作战_周本黑胶获取_扫荡": {
+        "recognition": "OCR",
+        "expected": ["扫荡", "扫汤"],
+        "roi": [959, 643, 58, 42],
+        "action": "Click",
+        "post_delay": 1000
+    },
+    "作战_周本黑胶获取_探索完成": {
+        "recognition": "OCR",
+        "expected": ["探索完成", "探索完", "探索"],
+        "roi": [174, 80, 357, 99],
+        "action": "Click",
+        "post_delay": 1000
+    }
+}

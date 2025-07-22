@@ -1,0 +1,18 @@
+{
+    "基准_已经登录": {
+        "recognition": "OCR",
+        "expected": ["系统"],
+        "method": 5,
+        "threshold": 0.9,
+        "roi": [44, 641, 168, 55]
+    },
+    "基准_完成登录": {
+        "recognition": "OCR",
+        "expected": ["设置"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [29, 581, 187, 105],
+        "action": "Click",
+        "target": [612, 25, 570, 640]
+    }
+}

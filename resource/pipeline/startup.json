@@ -1,0 +1,104 @@
+{
+    "StartUp": {
+        "action": "DoNothing",
+        "rate_limit": 2000,
+        "next": ["基准_完成登录", "基准_已经登录"],
+        "interrupt": [
+            "登录_需要更新",
+            "登录_等待加载",
+            "基准_加载中",
+            "登录_关闭签到",
+            "基准_获取物资",
+            "登录_服务器维护中",
+            "登录_关闭登录公告",
+            "登录_tap登录_预备",
+            "登录_月度资源",
+            "登录_启动游戏"
+        ]
+    },
+    "登录_启动游戏": {
+        "action": "StartApp",
+        "package": "com.leiting.yxhs",
+        "post_delay": 12000
+    },
+    "登录_等待加载": {
+        "recognition": "OCR",
+        "expected": ["资源加载中"],
+        "threshold": 0.9,
+        "roi": [559, 477, 150, 42],
+        "post_delay": 1500,
+        "rate_limit": 1000
+    },
+    "登录_关闭登录公告": {
+        "recognition": "TemplateMatch",
+        "template": "登录/登录_关闭公告.png",
+        "method": 3,
+        "threshold": 0.98,
+        "roi": [1126, 76, 51, 49],
+        "post_delay": 2000,
+        "action": "Click"
+    },
+    "登录_服务器维护中": {
+        "recognition": "TemplateMatch",
+        "template": "登录/登录_维护下载.png",
+        "post_delay": 12000,
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [587, 355, 116, 84],
+        "action": "Click"
+    },
+    "登录_需要更新": {
+        "recognition": "TemplateMatch",
+        "template": "登录/登录_维护下载.png",
+        "post_delay": 12000,
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [686, 363, 74, 67],
+        "action": "Click"
+    },
+    "登录_tap登录_预备": {
+        "recognition": "OCR",
+        "expected": ["TapTap登录", "TapT登录", "登录", "Tap", "TapT"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [552, 555, 168, 32],
+        "action": "Click",
+        "post_delay": 5000,
+        "next": ["登录_点击登录"],
+        "interrupt": ["登录_tap登录_完成"]
+    },
+    "登录_tap登录_完成": {
+        "recognition": "OCR",
+        "expected": ["同意"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [442, 634, 500, 36],
+        "action": "Click",
+        "post_delay": 2000
+    },
+    "登录_点击登录": {
+        "recognition": "TemplateMatch",
+        "template": "登录/登录_点击开始游戏.png",
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [543, 511, 197, 32],
+        "action": "Click",
+        "post_delay": 3000
+    },
+    "登录_关闭签到": {
+        "recognition": "TemplateMatch",
+        "template": "登录/登录_关闭签到页.png",
+        "method": 3,
+        "threshold": 0.98,
+        "roi": [1161, 70, 49, 52],
+        "action": "Click"
+    },
+    "登录_月度资源": {
+        "recognition": "TemplateMatch",
+        "template": "登录/登录_月度资源包叉叉.png",
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [515, 354, 88, 83],
+        "action": "Click"
+    }
+}

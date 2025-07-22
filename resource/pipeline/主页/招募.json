@@ -1,0 +1,83 @@
+{
+    "招募_招募准备": {
+        "next": ["招募_任务已满"],
+        "interrupt": ["主页_进入招募", "招募_招募成功", "招募_启动招募", "招募_外部招募"]
+    },
+    "主页_进入招募": {
+        "recognition": "OCR",
+        "expected": ["招募"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [922, 432, 112, 59],
+        "action": "Click",
+        "post_delay": 1000,
+        "target": [882, 409, 155, 159],
+        "next": ["招募_外部招募"]
+    },
+    "招募_外部招募": {
+        "recognition": "OCR",
+        "expected": ["外部招募"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [24, 61, 186, 693],
+        "action": "Click",
+        "post_delay": 1000
+    },
+    "招募_招募成功": {
+        "recognition": "OCR",
+        "expected": ["招募成功"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [937, 529, 135, 37],
+        "action": "Click",
+        "post_delay": 3000,
+        "target": [937, 529, 135, 37],
+        "next": ["招募_启动招募"],
+        "interrupt": ["基准_获取物资", "招募_消除过程"]
+    },
+    "招募_消除过程": {
+        "action": "Click",
+        "post_delay": 1000,
+        "target": [455, 191, 600, 372]
+    },
+    "招募_启动招募": {
+        "recognition": "OCR",
+        "expected": ["启动招募"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [939, 529, 129, 37],
+        "action": "Click",
+        "post_delay": 1000,
+        "target": [939, 529, 129, 37],
+        "next": ["招募_启动招募最大化"]
+    },
+    "招募_启动招募最大化": {
+        "recognition": "OCR",
+        "expected": ["MAX"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [795, 345, 72, 56],
+        "action": "Click",
+        "post_delay": 1000,
+        "target": [795, 345, 72, 56],
+        "next": ["招募_确定招募", "招募_启动招募最大化"]
+    },
+    "招募_确定招募": {
+        "recognition": "OCR",
+        "expected": ["确定"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [700, 463, 143, 34],
+        "action": "Click",
+        "post_delay": 1000,
+        "target": [700, 463, 143, 34]
+    },
+    "招募_任务已满": {
+        "recognition": "OCR",
+        "expected": ["任务已满"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [946, 518, 129, 50],
+        "next": ["基准_返回主界面"]
+    }
+}

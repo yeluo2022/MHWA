@@ -1,0 +1,34 @@
+{
+    "补给_活动货柜准备": {
+        "next": ["补给_活动货柜_明日可领取"],
+        "interrupt": ["补给_活动货柜_可领取", "基准_获取物资", "补给_活动货柜", "主页_进入补给站"]
+    },
+    "补给_活动货柜": {
+        "recognition": "OCR",
+        "expected": ["活动货柜"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [5, 139, 200, 573],
+        "action": "Click",
+        "post_delay": 1000
+    },
+    "补给_活动货柜_可领取": {
+        "recognition": "OCR",
+        "expected": ["可领取"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [237, 346, 233, 39],
+        "action": "Click",
+        "post_delay": 1000,
+        "target": [237, 346, 233, 39]
+    },
+    "补给_活动货柜_明日可领取": {
+        "recognition": "OCR",
+        "expected": ["明日可领取"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [225, 332, 251, 62],
+        "post_delay": 1000,
+        "next": ["基准_返回主界面"]
+    }
+}

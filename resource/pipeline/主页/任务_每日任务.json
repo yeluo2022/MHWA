@@ -1,0 +1,34 @@
+{
+    "主页_进入任务_每日": {
+        "recognition": "OCR",
+        "expected": ["任务"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [792, 634, 107, 57],
+        "action": "Click",
+        "post_delay": 1000,
+        "target": [792, 634, 107, 57],
+        "next": ["任务_进入每日任务", "主页_进入任务_每日"]
+    },
+    "任务_进入每日任务": {
+        "recognition": "OCR",
+        "expected": ["日常任务"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [713, 9, 157, 56],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": ["每日任务_全部领取", "基准_返回主界面"]
+    },
+    "每日任务_全部领取": {
+        "recognition": "OCR",
+        "expected": ["全部领取"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [1047, 639, 179, 70],
+        "action": "Click",
+        "post_delay": 5000,
+        "next": ["每日任务_全部领取", "基准_返回主界面"],
+        "interrupt": ["基准_获取物资"]
+    }
+}

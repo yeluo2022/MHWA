@@ -1,0 +1,11 @@
+{
+    "基建_冥想日志": {
+        "recognition": "OCR",
+        "expected": ["冥想日志"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [515, 29, 259, 84],
+        "action": "Click",
+        "target": [15, 353, 106, 244]
+    }
+}

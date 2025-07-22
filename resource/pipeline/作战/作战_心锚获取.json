@@ -1,0 +1,79 @@
+{
+    "作战_心锚获取_进入界面": {
+        "next": ["作战_心锚获取_预备作战"],
+        "interrupt": ["基准_作战_进入作战", "作战_心锚获取_进入特别行动", "作战_心锚获取_进入危机行动"]
+    },
+    "作战_心锚获取_进入特别行动": {
+        "recognition": "OCR",
+        "expected": ["特别行动"],
+        "roi": [544, 656, 215, 41],
+        "action": "Click"
+    },
+    "作战_心锚获取_进入危机行动": {
+        "recognition": "OCR",
+        "expected": ["危机行动"],
+        "roi": [115, 496, 234, 52],
+        "action": "Click",
+        "post_delay": 1000
+    },
+    "作战_心锚获取_切换常驻行动": {
+        "recognition": "OCR",
+        "expected": ["常驻行动"],
+        "roi": [63, 91, 80, 26],
+        "action": "Click",
+        "post_delay": 1000
+    },
+    "作战_心锚获取_切换特级行动": {
+        "recognition": "OCR",
+        "expected": ["特级行动"],
+        "roi": [215, 90, 83, 28],
+        "action": "Click",
+        "post_delay": 1000
+    },
+
+    "作战_心锚获取_预备作战": {
+        "recognition": "OCR",
+        "expected": ["常驻行动"],
+        "roi": [63, 91, 80, 26],
+        "post_delay": 1000,
+        "next": ["作战_心锚获取_开始战斗"],
+        "interrupt": ["作战_心锚获取_上滑"]
+    },
+    "作战_快速完成": {
+        "recognition": "OCR",
+        "expected": ["快速完成"],
+        "roi": [845, 641, 151, 68],
+        "action": "Click",
+        "post_delay": 1000
+    },
+    "作战_快速行动_出发": {
+        "recognition": "OCR",
+        "expected": ["出发"],
+        "roi": [778, 542, 224, 45],
+        "action": "Click",
+        "post_delay": 1000
+    },
+    "作战_快速行动_确定": {
+        "recognition": "OCR",
+        "expected": ["确定"],
+        "roi": [1008, 654, 176, 45],
+        "action": "Click",
+        "post_delay": 1000
+    },
+    "作战_快速行动_下次恢复时间": {
+        "recognition": "OCR",
+        "expected": ["下次恢复时间"],
+        "roi": [501, 61, 121, 33],
+        "next": ["基准_返回首页"],
+        "post_delay": 1000
+    },
+    "作战_心锚获取_开始战斗": {
+        "recognition": "OCR",
+        "expected": ["S303"],
+        "roi": [47, 149, 245, 551],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": ["作战_快速行动_下次恢复时间"],
+        "interrupt": ["作战_快速完成", "作战_快速行动_出发", "作战_快速行动_确定"]
+    }
+}

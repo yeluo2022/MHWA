@@ -1,0 +1,26 @@
+{
+    "resource": "官服",
+    "controller": {
+        "name": "ADB 默认方式"
+    },
+    "adb": {
+        "adb_path": "E:/MuMu Player 12/shell/adb.exe",
+        "address": "127.0.0.1:16736",
+        "config": {
+            "extras": {
+                "mumu": {
+                    "enable": true,
+                    "index": 11,
+                    "path": "E:/MuMu Player 12"
+                }
+            }
+        }
+    },
+    "task": [
+        {
+            "name": "启动游戏",
+            "option": [],
+            "__vscKey": "89c2403b-099b-43c8-8cc5-cad75c68cbd0"
+        }
+    ]
+}

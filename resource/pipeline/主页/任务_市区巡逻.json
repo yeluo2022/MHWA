@@ -1,0 +1,135 @@
+{
+    "巡逻_进入市区巡逻": {
+        "next": ["巡逻_状态机_未完成"],
+        "interrupt": ["巡逻_点击市区巡逻", "主页_进入任务_巡逻"]
+    },
+
+    "主页_进入任务_巡逻": {
+        "recognition": "OCR",
+        "expected": ["任务"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [792, 634, 107, 57],
+        "action": "Click",
+        "post_delay": 1000,
+        "target": [792, 634, 107, 57]
+    },
+    "巡逻_点击市区巡逻": {
+        "recognition": "OCR",
+        "expected": ["市区巡逻"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [1069, 5, 188, 61],
+        "action": "Click",
+        "post_delay": 1000
+    },
+    "巡逻_状态机_未完成": {
+        "recognition": "OCR",
+        "expected": ["好友互助"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [1020, 642, 207, 50],
+        "post_delay": 1000,
+        "next": ["巡逻_全部购入_待完成", "巡逻_全部购入_已完成"],
+        "interrupt": ["巡逻_每日领取_未领取", "巡逻_互助_未完成"]
+    },
+    "巡逻_每日领取_未领取": {
+        "recognition": "OCR",
+        "expected": ["每日领取"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [1047, 549, 174, 60],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": ["巡逻_每日领取_已领取"],
+        "interrupt": ["基准_获取物资"]
+    },
+    "巡逻_每日领取_已领取": {
+        "recognition": "OCR",
+        "expected": ["已领取"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [1047, 549, 174, 60],
+        "post_delay": 1000
+    },
+    "巡逻_互助_未完成": {
+        "recognition": "OCR",
+        "expected": ["剩余20次"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [1020, 642, 207, 50],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": ["巡逻_互助_可领取", "巡逻_互助_自动勾选", "巡逻_互助_未完成"]
+    },
+    "巡逻_互助_已完成": {
+        "recognition": "OCR",
+        "expected": ["剩余0次"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [1020, 642, 207, 50],
+        "post_delay": 1000
+    },
+    "巡逻_互助_自动勾选": {
+        "recognition": "OCR",
+        "expected": ["自动勾选"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [764, 90, 154, 37],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": ["巡逻_互助_赠送", "巡逻_互助_自动勾选"]
+    },
+    "巡逻_互助_赠送": {
+        "recognition": "OCR",
+        "expected": ["赠送"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [965, 176, 219, 57],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": ["巡逻_互助_已完成", "巡逻_互助_赠送"],
+        "interrupt": ["基准_获取物资"]
+    },
+    "巡逻_互助_可领取": {
+        "recognition": "OCR",
+        "expected": ["0/10"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [1053, 495, 138, 78],
+        "post_delay": 1000,
+        "next": ["巡逻_互助_完成领取", "巡逻_互助_可领取"]
+    },
+    "巡逻_互助_完成领取": {
+        "recognition": "OCR",
+        "expected": ["可领取"],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [970, 588, 209, 38],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": ["巡逻_互助_未完成"],
+        "interrupt": ["基准_获取物资"]
+    },
+    "巡逻_全部购入_待完成": {
+        "recognition": "TemplateMatch",
+        "template": "巡逻\\全部购入_待完成.png",
+        "method": 3,
+        "threshold": 0.98,
+        "roi": [202, 502, 124, 42],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": ["基准_返回主界面"]
+    },
+    "巡逻_全部购入_已完成": {
+        "recognition": "TemplateMatch",
+        "template": "巡逻\\全部购入_无法完成.png",
+        "method": 3,
+        "threshold": 0.98,
+        "roi": [202, 502, 124, 42],
+        "action": "Click",
+        "inverse": true,
+        "post_delay": 1000,
+        "next": ["基准_返回主界面"]
+    }
+}

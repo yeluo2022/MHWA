@@ -1,0 +1,96 @@
+{
+    "基建_冥想准备": {
+        "next": ["解读_解读检测"],
+        "interrupt": ["基建_解读_预备解读", "基建_冥想日志", "基准_加载中", "基准_主页_进入基建"]
+    },
+
+    "基建_解读_预备解读": {
+        "recognition": "OCR",
+        "expected": ["解读"],
+        "target_offset": [0, -50, 0, -50],
+        "method": 3,
+        "threshold": 0.9,
+        "roi": [1155, 639, 83, 76],
+        "post_delay": 1000,
+        "action": "Click"
+    },
+    "解读_解读检测": {
+        "recognition": "TemplateMatch",
+        "template": "事务所/解读/解读_解读仪式页面.png",
+        "method": 3,
+        "threshold": 0.9,
+        "rate_limit": 3000,
+        "roi": [10, 36, 314, 242],
+        "next": ["解读_追加残片", "解读_失败解读"],
+        "interrupt": ["解读_关闭解读", "解读_进行解读", "基建_冥想日志", "解读_触发解读"]
+    },
+    "解读_触发解读": {
+        "action": "Click",
+        "post_delay": 1000,
+        "target": [413, 120, 140, 207]
+    },
+    "解读_进行解读": {
+        "todo": "这里需要一个自定义逻辑,仅pipeline就默认第一个,正常需要考虑收益最大化选区,然后回到检测点",
+        "recognition": "OCR",
+        "expected": ["开始仪式"],
+        "method": 3,
+        "threshold": 0.9,
+        "action": "Click",
+        "roi": [69, 524, 341, 80]
+    },
+    "解读_失败解读": {
+        "recognition": "OCR",
+        "expected": ["物品不足"],
+        "method": 3,
+        "threshold": 0.9,
+        "action": "Click",
+        "roi": [69, 524, 341, 80],
+        "next": ["解读_退出解读"]
+    },
+    "解读_关闭解读": {
+        "recognition": "OCR",
+        "expected": ["请点击任意空白处关闭界面"],
+        "method": 3,
+        "threshold": 0.9,
+        "action": "Click",
+        "roi": [517, 655, 244, 34]
+    },
+    "解读_追加残片": {
+        "recognition": "OCR",
+        "expected": ["追加档案残片"],
+        "method": 5,
+        "threshold": 0.99,
+        "action": "Click",
+        "roi": [799, 595, 381, 104],
+        "next": ["解读_残片_完成追加", "解读_残片_失败追加"]
+    },
+    "解读_残片_完成追加": {
+        "recognition": "TemplateMatch",
+        "template": "事务所/解读/解读_残片_确定追加.png",
+        "method": 3,
+        "threshold": 0.99,
+        "action": "Click",
+        "roi": [691, 492, 231, 39],
+        "next": ["解读_解读检测"]
+    },
+    "解读_残片_失败追加": {
+        "recognition": "TemplateMatch",
+        "template": "事务所/解读/解读_残片_失败追加.png",
+        "method": 3,
+        "threshold": 0.9,
+        "action": "Click",
+        "roi": [687, 488, 237, 42],
+        "target": [374, 492, 234, 41],
+        "next": ["解读_退出解读"]
+    },
+    "解读_退出解读": {
+        "recognition": "TemplateMatch",
+        "template": "事务所/解读/解读_退出解读.png",
+        "method": 5,
+        "threshold": 0.9,
+        "action": "Click",
+        "roi": [10, 8, 273, 59],
+        "post_delay": 1000,
+        "next": ["解读_退出解读", "基准_返回主界面"]
+    }
+}

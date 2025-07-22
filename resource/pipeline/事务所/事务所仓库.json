@@ -1,0 +1,67 @@
+{
+    "基建_清仓准备": {
+        "next": ["基建_分解_完成分解"],
+        "interrupt": ["基建_进入仓库", "基建_冥想日志", "基准_加载中", "基准_主页_进入基建"]
+    },
+    "基建_进入仓库": {
+        "recognition": "OCR",
+        "expected": ["库存"],
+        "roi": [645, 620, 173, 94],
+        "action": "Click",
+        "post_delay": 3000,
+        "target_offset": [0, -50, 0, -50]
+    },
+    "基建_分解_完成分解": {
+        "recognition": "OCR",
+        "expected": ["全部"],
+        "roi": [1181, 64, 90, 86],
+        "next": ["仓库_分解_失败分解"],
+        "interrupt": ["仓库_分解_开始分解"]
+    },
+    "仓库_分解_开始分解": {
+        "recognition": "TemplateMatch",
+        "template": "事务所/仓库/仓库_分解_确定分解.png",
+        "method": 3,
+        "threshold": 0.99,
+        "action": "Click",
+        "roi": [913, 663, 253, 52],
+        "post_delay": 1000,
+        "next": ["分解_滑动最大值"]
+    },
+    "分解_滑动最大值": {
+        "recognition": "OCR",
+        "expected": ["分解数量"],
+        "roi": [558, 216, 127, 41],
+        "action": "Swipe",
+        "begin": [429, 334, 27, 30],
+        "end": [950, 341, 28, 24],
+        "next": ["分解_确定分解"]
+    },
+    "分解_确定分解": {
+        "recognition": "OCR",
+        "expected": ["确定"],
+        "roi": [650, 438, 237, 47],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": ["分解_收尾点击"],
+        "interrupt": ["基准_获取物资"]
+    },
+    "分解_收尾点击": {
+        "recognition": "OCR",
+        "expected": ["全部"],
+        "roi": [1181, 64, 90, 86],
+        "action": "Click",
+        "target": [721, 79, 247, 99]
+    },
+    "仓库_分解_失败分解": {
+        "recognition": "TemplateMatch",
+        "template": "事务所/仓库/仓库_分解_失败分解.png",
+        "method": 3,
+        "threshold": 0.99,
+        "action": "Click",
+        "roi": [913, 663, 253, 52],
+        "target": [592, 668, 242, 42],
+        "post_delay": 1000,
+        "next": ["基准_返回主界面"]
+    }
+}

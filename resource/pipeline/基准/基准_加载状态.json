@@ -1,0 +1,10 @@
+{
+    "基准_加载中": {
+        "recognition": "TemplateMatch",
+        "template": "基准/基准_加载状态.png",
+        "method": 3,
+        "threshold": 0.95,
+        "roi": [116, 587, 78, 22],
+        "post_wait_freezes": 1000
+    }
+}

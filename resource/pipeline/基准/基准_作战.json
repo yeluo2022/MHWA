@@ -1,0 +1,23 @@
+{
+    "基准_作战_进入作战": {
+        "recognition": "OCR",
+        "expected": ["作战"],
+        "roi": [816, 280, 216, 87],
+        "action": "Click",
+        "post_delay": 1000
+    },
+    "作战_心锚获取_下滑": {
+        "action": "Swipe",
+        "begin": [158, 135, 47, 12],
+        "end": [158, 229, 47, 12],
+        "duration": 1000,
+        "post_delay": 1000
+    },
+    "作战_心锚获取_上滑": {
+        "action": "Swipe",
+        "begin": [158, 229, 47, 12],
+        "end": [158, 135, 47, 12],
+        "duration": 1000,
+        "post_delay": 1000
+    }
+}
