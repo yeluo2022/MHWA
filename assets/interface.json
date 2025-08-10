@@ -1,0 +1,24 @@
+{
+    "name": "MHWA",
+    "url": "https://github.com/yeluo2022/MHWA",
+    "controller": [
+        {
+            "name": "ADB 默认方式",
+            "type": "Adb"
+        }
+    ],
+    "resource": [
+        {
+            "name": "官服",
+            "path": [
+                "{PROJECT_DIR}/resource/base"
+            ]
+        }
+    ],
+    "task": [
+        {
+            "name": "启动游戏",
+            "entry": "进入主页"
+        }
+    ]
+}
