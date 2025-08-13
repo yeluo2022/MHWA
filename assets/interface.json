@@ -34,7 +34,8 @@
             "name": "演习",
             "entry": "演习",
             "option": [
-                "代理作战"
+                "代理作战",
+                "补充票（不消耗结晶）"
             ]
         },
         {
@@ -166,6 +167,26 @@
                     "name": "否",
                     "pipeline_override": {
                         "代理作战": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "补充票（不消耗结晶）": {
+            "cases": [
+                {
+                    "name": "是",
+                    "pipeline_override": {
+                        "补充票（不消耗结晶）": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "否",
+                    "pipeline_override": {
+                        "补充票（不消耗结晶）": {
                             "enabled": false
                         }
                     }

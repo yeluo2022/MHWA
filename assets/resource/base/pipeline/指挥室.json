@@ -1,7 +1,6 @@
 {
     "指挥室": {
         "next": [
-            "返回主页",
             "打开指挥室",
             "全部收集",
             "进入远征",
@@ -39,10 +38,10 @@
         "action": "Click",
         "post_delay": 1000,
         "next": [
-            "获得资源",
             "进入远征",
             "全部收集"
-        ]
+        ],
+        "interrupt": "获得资源"
     },
     "进入远征": {
         "recognition": "TemplateMatch",
@@ -56,14 +55,18 @@
         "action": "Click",
         "post_delay": 1000,
         "next": [
-            "退出远征",
             "再次派遣",
+            "退出远征",
             "进入远征"
-        ]
+        ],
+        "interrupt": "点击领取"
     },
     "再次派遣": {
         "recognition": "OCR",
-        "expected": "再次派遣",
+        "expected": [
+            "再次",
+            "派遣"
+        ],
         "roi": [
             693,
             569,

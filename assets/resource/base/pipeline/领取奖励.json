@@ -20,150 +20,37 @@
         "action": "Click",
         "post_delay": 500,
         "next": [
-            "任务奖励领取1",
-            "任务奖励领取1.1",
-            "任务奖励领取2",
-            "任务奖励领取2.1",
-            "任务奖励领取3",
-            "任务奖励领取3.1",
-            "返回主页",
-            "通行证奖励",
-            "邮箱奖励",
-            "支援角色友情币",
-            "任务奖励"
+            "任务"
         ]
     },
-    "任务奖励领取1": {
-        "recognition": "TemplateMatch",
-        "template": "红点.png",
-        "roi": [
-            54,
-            140,
-            228,
-            51
-        ],
-        "action": "Click",
-        "post_delay": 500,
+    "任务": {
         "next": [
             "一键领取",
-            "任务奖励领取1.1",
-            "任务奖励领取1"
-        ]
-    },
-    "任务奖励领取1.1": {
-        "recognition": "TemplateMatch",
-        "template": "红点.png",
-        "roi": [
-            348,
-            603,
-            588,
-            106
-        ],
-        "action": "Click",
-        "post_delay": 500,
-        "next": [
-            "获得资源",
-            "任务奖励领取2",
-            "任务奖励领取3",
-            "任务奖励领取3.1"
-        ]
-    },
-    "任务奖励领取2": {
-        "recognition": "TemplateMatch",
-        "template": "红点.png",
-        "roi": [
-            42,
-            240,
-            227,
-            49
-        ],
-        "action": "Click",
-        "post_delay": 500,
-        "next": [
-            "一键领取",
-            "任务奖励领取2.1"
-        ]
-    },
-    "任务奖励领取2.1": {
-        "recognition": "TemplateMatch",
-        "template": "红点.png",
-        "roi": [
-            348,
-            603,
-            588,
-            106
-        ],
-        "action": "Click",
-        "post_delay": 500,
-        "next": [
-            "获得资源",
-            "任务奖励领取2-结束"
+            "结束每日"
         ],
         "interrupt": [
-            "任务奖励领取2.1"
+            "点击红点"
         ]
     },
-    "任务奖励领取2-结束": {
+    "点击红点": {
         "recognition": "TemplateMatch",
         "template": "红点.png",
         "roi": [
-            356,
-            610,
-            587,
-            98
-        ],
-        "inverse": true,
-        "next": [
-            "任务奖励领取3"
-        ]
-    },
-    "任务奖励领取3": {
-        "recognition": "TemplateMatch",
-        "template": "红点.png",
-        "roi": [
-            45,
-            340,
-            224,
-            45
+            27,
+            100,
+            919,
+            610
         ],
         "action": "Click",
-        "post_delay": 500,
-        "next": [
-            "一键领取",
-            "任务奖励领取3.1",
-            "任务奖励领取3-结束",
-            "返回主页"
-        ]
+        "post_delay": 200,
+        "next": "获得资源"
     },
-    "任务奖励领取3.1": {
+    "结束每日": {
         "recognition": "TemplateMatch",
         "template": "红点.png",
-        "roi": [
-            348,
-            603,
-            588,
-            106
-        ],
-        "action": "Click",
-        "post_delay": 500,
-        "next": [
-            "获得资源",
-            "任务奖励领取3-结束"
-        ],
-        "interrupt": [
-            "任务奖励领取3.1"
-        ]
-    },
-    "任务奖励领取3-结束": {
-        "recognition": "TemplateMatch",
-        "template": "红点.png",
-        "roi": [
-            356,
-            610,
-            587,
-            98
-        ],
         "inverse": true,
+        "threshold": 0.9,
+        "post_delay": 200,
         "next": [
             "返回主页",
             "通行证奖励",
@@ -183,76 +70,37 @@
         "action": "Click",
         "post_delay": 500,
         "next": [
-            "通行证任务",
-            "通行证-积分领取",
-            "通行证-积分领取-结束",
-            "通行证-奖励领取",
-            "一键领取",
-            "返回主页",
-            "邮箱奖励",
-            "支援角色友情币"
-        ]
-    },
-    "通行证任务": {
-        "recognition": "OCR",
-        "expected": "任务",
-        "roi": [
-            769,
-            619,
-            227,
-            78
-        ],
-        "action": "Click",
-        "post_delay": 500,
-        "next": [
-            "通行证-积分领取",
-            "通行证-积分领取-结束",
             "通行证任务"
         ]
     },
-    "通行证-积分领取": {
-        "recognition": "TemplateMatch",
-        "template": "红点.png",
-        "roi": [
-            29,
-            153,
-            259,
-            277
-        ],
-        "threshold": 0.9,
-        "action": "Click",
+    "通行证任务": {
         "next": [
-            "一键领取",
-            "通行证-积分领取-结束"
+            "结束通行证任务1"
         ],
         "interrupt": [
-            "通行证-积分领取"
+            "识别红点"
         ]
     },
-    "通行证-积分领取-结束": {
+    "识别红点": {
         "recognition": "TemplateMatch",
         "template": "红点.png",
         "roi": [
-            29,
-            153,
-            259,
-            277
-        ],
-        "inverse": true,
-        "next": [
-            "通行证-奖励领取"
-        ]
-    },
-    "通行证-奖励领取": {
-        "recognition": "OCR",
-        "expected": "奖励",
-        "roi": [
-            818,
-            639,
-            140,
-            40
+            39,
+            87,
+            976,
+            622
         ],
         "action": "Click",
+        "post_delay": 200,
+        "next": [
+            "一键领取",
+            "识别红点"
+        ]
+    },
+    "结束通行证任务1": {
+        "recognition": "TemplateMatch",
+        "template": "红点.png",
+        "inverse": true,
         "next": [
             "一键领取",
             "返回主页",
@@ -272,46 +120,8 @@
         "action": "Click",
         "post_delay": 500,
         "next": [
-            "邮箱-领取全部",
-            "邮箱-领取全部-结束",
             "邮箱-领取",
-            "邮箱-领取-结束",
-            "邮箱奖励",
             "支援角色友情币"
-        ]
-    },
-    "邮箱-领取全部": {
-        "recognition": "OCR",
-        "expected": [
-            "领取",
-            "全部"
-        ],
-        "roi": [
-            239,
-            623,
-            198,
-            75
-        ],
-        "action": "Click",
-        "next": [
-            "获得资源",
-            "邮箱-领取全部-结束",
-            "邮箱-领取全部"
-        ]
-    },
-    "邮箱-领取全部-结束": {
-        "recognition": "OCR",
-        "expected": "没有奖励",
-        "roi": [
-            503,
-            318,
-            276,
-            83
-        ],
-        "post_delay": 500,
-        "next": [
-            "邮箱-领取",
-            "邮箱-领取-结束"
         ]
     },
     "邮箱-领取": {

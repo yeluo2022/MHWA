@@ -2,6 +2,9 @@
     "演习": {
         "next": [
             "打开演习",
+            "补充票（不消耗结晶）",
+            "代理完成",
+            "代理作战",
             "返回主页"
         ]
     },
@@ -16,9 +19,10 @@
         ],
         "action": "Click",
         "next": [
+            "补充票（不消耗结晶）",
             "代理完成",
+            "代理作战",
             "退出演习",
-            "返回主页",
             "打开演习"
         ],
         "interrupt": [
@@ -34,8 +38,9 @@
             271,
             72
         ],
+        "pre_delay": 1000,
         "action": "Click",
-        "post_delay": 1000,
+        "post_delay": 500,
         "next": [
             "无法进攻",
             "扫荡结算"
@@ -70,12 +75,28 @@
         ],
         "post_delay": 500,
         "next": [
+            "无次数",
             "代理作战",
-            "调整次数",
-            "开始代理",
-            "退出演习",
             "返回主页",
             "扫荡结算"
+        ]
+    },
+    "无次数": {
+        "doc": "无演习次数",
+        "recognition": "OCR",
+        "expected": [
+            "0/15",
+            "0115",
+            "0715"
+        ],
+        "roi": [
+            1078,
+            13,
+            177,
+            56
+        ],
+        "next": [
+            "返回主页"
         ]
     },
     "代理作战": {
@@ -91,7 +112,6 @@
         "post_delay": 200,
         "next": [
             "调整次数",
-            "开始代理",
             "代理作战"
         ]
     },
@@ -104,6 +124,8 @@
             168,
             81
         ],
+        "pre_wait_freezes": 200,
+        "post_wait_freezes": 200,
         "action": "Click",
         "next": [
             "开始代理",
@@ -120,6 +142,7 @@
             96
         ],
         "action": "Click",
+        "pre_wait_freezes": 200,
         "post_wait_freezes": 200,
         "next": [
             "退出演习",
@@ -144,7 +167,7 @@
     },
     "补充票（不消耗结晶）": {
         "recognition": "TemplateMatch",
-        "template": "加号.png",
+        "template": "演习-加号.png",
         "roi": [
             1195,
             13,
@@ -152,11 +175,37 @@
             49
         ],
         "action": "Click",
+        "pre_wait_freezes": 1000,
         "post_wait_freezes": 500,
         "next": [
+            "无票",
             "使用票",
             "票最大值",
             "确认"
+        ]
+    },
+    "无票": {
+        "recognition": "TemplateMatch",
+        "template": "演习票.png",
+        "roi": [
+            475,
+            214,
+            318,
+            135
+        ],
+        "inverse": true,
+        "action": "Click",
+        "target": [
+            608,
+            47,
+            41,
+            29
+        ],
+        "pre_wait_freezes": 200,
+        "next": [
+            "代理完成",
+            "代理作战",
+            "退出演习"
         ]
     },
     "使用票": {
@@ -169,15 +218,16 @@
             135
         ],
         "action": "Click",
+        "pre_wait_freezes": 200,
+        "post_wait_freezes": 200,
         "next": [
             "票最大值",
-            "确认",
             "使用票"
         ]
     },
     "票最大值": {
         "recognition": "TemplateMatch",
-        "template": "MAX.png",
+        "template": "演习-MAX.png",
         "roi": [
             533,
             349,
@@ -185,8 +235,11 @@
             60
         ],
         "action": "Click",
+        "pre_wait_freezes": 500,
+        "post_wait_freezes": 500,
         "next": [
-            "确认"
+            "确认",
+            "票最大值"
         ]
     },
     "确认": {
@@ -198,9 +251,13 @@
             317,
             108
         ],
+        "action": "Click",
+        "pre_wait_freezes": 500,
+        "post_wait_freezes": 500,
         "next": [
             "代理作战",
-            "代理完成"
+            "代理完成",
+            "退出演习"
         ]
     }
 }

@@ -3,8 +3,7 @@
         "recognition": "TemplateMatch",
         "template": "点击领取.png",
         "action": "Click",
-        "post_delay": 1000,
-        "next": "获得资源"
+        "post_delay": 1000
     },
     "一键领取": {
         "is_sub": true,
@@ -19,9 +18,13 @@
         "pre_delay": 500,
         "action": "Click",
         "post_delay": 500,
-        "next": "获得资源"
+        "next": [
+            "获得资源",
+            "一键领取结束"
+        ]
     },
     "获得资源": {
+        "is_sub": true,
         "recognition": "OCR",
         "expected": "获得资源",
         "roi": [
@@ -39,6 +42,18 @@
             59
         ],
         "post_delay": 1000
+    },
+    "一键领取结束": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            778,
+            509,
+            488,
+            200
+        ],
+        "template": "一键领取结束.png",
+        "pre_delay": 500,
+        "next": []
     },
     "断线重连": {
         "is_sub": true,
