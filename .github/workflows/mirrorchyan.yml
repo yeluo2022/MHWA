@@ -16,8 +16,8 @@ jobs:
         if: ${{ github.repository_owner == 'MaaXYZ' }}
         with:
           filetype: latest-release
-          filename: ${{ matrix.os == 'win' && format('MCCA-{0}-{1}-*.zip', matrix.os, matrix.arch) || format('MCCA-{0}-{1}-*.tar.gz', matrix.os, matrix.arch) }}
-          mirrorchyan_rid: MCCA
+          filename: ${{ matrix.os == 'win' && format('MHWA-{0}-{1}-*.zip', matrix.os, matrix.arch) || format('MCCA-{0}-{1}-*.tar.gz', matrix.os, matrix.arch) }}
+          mirrorchyan_rid: MHWA
 
           github_token: ${{ secrets.GITHUB_TOKEN }}
           owner: ${{ github.repository_owner }}

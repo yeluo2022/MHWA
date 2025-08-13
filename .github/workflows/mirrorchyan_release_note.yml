@@ -14,7 +14,7 @@ jobs:
         if: ${{ github.repository_owner == 'MaaXYZ' }}
         uses: MirrorChyan/release-note-action@v1
         with:
-          mirrorchyan_rid: MCCA
+          mirrorchyan_rid: MHWA
 
           upload_token: ${{ secrets.MirrorChyanUploadToken }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
