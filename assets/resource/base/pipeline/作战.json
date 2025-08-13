@@ -1,0 +1,130 @@
+{
+    "作战": {
+        "next": [
+            "进入作战",
+            "进入资源",
+            "选择资源",
+            "选择关卡",
+            "关卡扫荡",
+            "返回主页"
+        ]
+    },
+    "进入作战": {
+        "recognition": "OCR",
+        "expected": "作战",
+        "roi": [
+            1012,
+            621,
+            255,
+            78
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "on_error": "返回主页",
+        "next": [
+            "进入资源",
+            "进入作战"
+        ]
+    },
+    "进入资源": {
+        "recognition": "OCR",
+        "expected": "资源",
+        "roi": [
+            199,
+            89,
+            894,
+            102
+        ],
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "选择资源",
+            "进入资源"
+        ]
+    },
+    "选择资源": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            103,
+            395,
+            1056,
+            268
+        ],
+        "action": "Click",
+        "post_delay": 300,
+        "next": [
+            "选择关卡",
+            "选择资源"
+        ],
+        "interrupt": "作战选项-滑动"
+    },
+    "选择关卡": {
+        "recognition": "OCR",
+        "roi": [
+            11,
+            82,
+            111,
+            631
+        ],
+        "action": "Click",
+        "post_delay": 300,
+        "next": [
+            "关卡扫荡",
+            "选择关卡"
+        ]
+    },
+    "作战选项-滑动": {
+        "action": "Swipe",
+        "begin": [
+            47,
+            643,
+            34,
+            37
+        ],
+        "end": [
+            52,
+            99,
+            24,
+            21
+        ],
+        "post_delay": 1000
+    },
+    "关卡-滑动": {
+        "action": "Swipe",
+        "begin": [
+            204,
+            632,
+            56,
+            51
+        ],
+        "end": [
+            222,
+            135,
+            24,
+            33
+        ],
+        "post_delay": 1000
+    },
+    "关卡扫荡": {
+        "next": [
+            "点击关卡"
+        ],
+        "interrupt": "关卡-滑动"
+    },
+    "点击关卡": {
+        "recognition": "TemplateMatch",
+        "threshold": 0.9,
+        "roi": [
+            135,
+            369,
+            323,
+            343
+        ],
+        "action": "Click",
+        "post_delay": 300,
+        "next": [
+            "未解锁",
+            "扫荡"
+        ]
+    }
+}

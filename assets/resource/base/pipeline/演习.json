@@ -1,0 +1,206 @@
+{
+    "演习": {
+        "next": [
+            "打开演习",
+            "返回主页"
+        ]
+    },
+    "打开演习": {
+        "recognition": "OCR",
+        "expected": "演习",
+        "roi": [
+            1028,
+            559,
+            232,
+            58
+        ],
+        "action": "Click",
+        "next": [
+            "代理完成",
+            "退出演习",
+            "返回主页",
+            "打开演习"
+        ],
+        "interrupt": [
+            "加载"
+        ]
+    },
+    "代理完成": {
+        "recognition": "TemplateMatch",
+        "template": "代理完成.png",
+        "roi": [
+            878,
+            625,
+            271,
+            72
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "无法进攻",
+            "扫荡结算"
+        ]
+    },
+    "无法进攻": {
+        "recognition": "OCR",
+        "expected": "无法进攻",
+        "roi": [
+            235,
+            325,
+            797,
+            74
+        ],
+        "next": [
+            "返回主页"
+        ]
+    },
+    "扫荡结算": {
+        "recognition": "OCR",
+        "expected": [
+            "扫荡",
+            "结算"
+        ],
+        "pre_wait_freezes": 3000,
+        "action": "Click",
+        "target": [
+            521,
+            589,
+            232,
+            45
+        ],
+        "post_delay": 500,
+        "next": [
+            "代理作战",
+            "调整次数",
+            "开始代理",
+            "退出演习",
+            "返回主页",
+            "扫荡结算"
+        ]
+    },
+    "代理作战": {
+        "recognition": "OCR",
+        "expected": "代理作战",
+        "roi": [
+            823,
+            644,
+            128,
+            33
+        ],
+        "action": "Click",
+        "post_delay": 200,
+        "next": [
+            "调整次数",
+            "开始代理",
+            "代理作战"
+        ]
+    },
+    "调整次数": {
+        "recognition": "TemplateMatch",
+        "template": "MAX.png",
+        "roi": [
+            687,
+            194,
+            168,
+            81
+        ],
+        "action": "Click",
+        "next": [
+            "开始代理",
+            "调整次数"
+        ]
+    },
+    "开始代理": {
+        "recognition": "TemplateMatch",
+        "template": "开始代理.png",
+        "roi": [
+            474,
+            496,
+            353,
+            96
+        ],
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "退出演习",
+            "开始代理"
+        ]
+    },
+    "退出演习": {
+        "recognition": "OCR",
+        "expected": "中止代理",
+        "roi": [
+            803,
+            617,
+            164,
+            82
+        ],
+        "next": [
+            "返回主页"
+        ],
+        "interrupt": [
+            "加载"
+        ]
+    },
+    "补充票（不消耗结晶）": {
+        "recognition": "TemplateMatch",
+        "template": "加号.png",
+        "roi": [
+            1195,
+            13,
+            58,
+            49
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "使用票",
+            "票最大值",
+            "确认"
+        ]
+    },
+    "使用票": {
+        "recognition": "TemplateMatch",
+        "template": "演习票.png",
+        "roi": [
+            475,
+            214,
+            318,
+            135
+        ],
+        "action": "Click",
+        "next": [
+            "票最大值",
+            "确认",
+            "使用票"
+        ]
+    },
+    "票最大值": {
+        "recognition": "TemplateMatch",
+        "template": "MAX.png",
+        "roi": [
+            533,
+            349,
+            322,
+            60
+        ],
+        "action": "Click",
+        "next": [
+            "确认"
+        ]
+    },
+    "确认": {
+        "recognition": "TemplateMatch",
+        "template": "确认.png",
+        "roi": [
+            484,
+            509,
+            317,
+            108
+        ],
+        "next": [
+            "代理作战",
+            "代理完成"
+        ]
+    }
+}

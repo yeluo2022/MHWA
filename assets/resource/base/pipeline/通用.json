@@ -1,8 +1,36 @@
 {
+    "点击领取": {
+        "recognition": "TemplateMatch",
+        "template": "点击领取.png",
+        "action": "Click",
+        "post_delay": 1000,
+        "next": "获得资源"
+    },
+    "一键领取": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "roi": [
+            778,
+            509,
+            488,
+            200
+        ],
+        "template": "一键领取.png",
+        "pre_delay": 500,
+        "action": "Click",
+        "post_delay": 500,
+        "next": "获得资源"
+    },
     "获得资源": {
         "recognition": "OCR",
         "expected": "获得资源",
-        "pre_wait_freezes": 1000,
+        "roi": [
+            492,
+            214,
+            303,
+            105
+        ],
+        "pre_delay": 500,
         "action": "Click",
         "target": [
             519,
@@ -11,7 +39,187 @@
             59
         ],
         "post_delay": 1000
+    },
+    "断线重连": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": [
+            "无法连接",
+            "网络连接"
+        ],
+        "roi": [
+            448,
+            251,
+            617,
+            128
+        ],
+        "action": "Click",
+        "target": [
+            591,
+            432,
+            199,
+            35
+        ]
+    },
+    "返回主页": {
+        "recognition": "TemplateMatch",
+        "template": "返回键.png",
+        "roi": [
+            2,
+            2,
+            200,
+            76
+        ],
+        "post_delay": 1000,
+        "action": "Click",
+        "next": [
+            "主界面",
+            "返回主页"
+        ]
+    },
+    "加载": {
+        "recognition": "OCR",
+        "expected": "LOADING",
+        "roi": [
+            511,
+            579,
+            237,
+            80
+        ],
+        "pre_delay": 1000
+    },
+    "扫荡": {
+        "next": [
+            "无扫荡",
+            "点击扫荡",
+            "最大次数",
+            "开始扫荡",
+            "扫荡结束"
+        ]
+    },
+    "无扫荡": {
+        "recognition": "OCR",
+        "expected": "扫荡",
+        "roi": [
+            791,
+            616,
+            192,
+            84
+        ],
+        "inverse": true,
+        "focus": "没有开启扫荡",
+        "next": "返回主页"
+    },
+    "点击扫荡": {
+        "recognition": "OCR",
+        "expected": "扫荡",
+        "roi": [
+            791,
+            616,
+            192,
+            84
+        ],
+        "action": "Click",
+        "post_delay": 200,
+        "next": [
+            "最大次数",
+            "开始扫荡",
+            "扫荡结束",
+            "点击扫荡"
+        ]
+    },
+    "最大次数": {
+        "recognition": "TemplateMatch",
+        "template": "MAX.png",
+        "roi": [
+            690,
+            192,
+            163,
+            80
+        ],
+        "action": "Click",
+        "post_delay": 200,
+        "next": [
+            "开始扫荡",
+            "扫荡结束",
+            "最大次数"
+        ]
+    },
+    "开始扫荡": {
+        "recognition": "TemplateMatch",
+        "template": "开始扫荡.png",
+        "roi": [
+            500,
+            508,
+            284,
+            72
+        ],
+        "action": "Click",
+        "post_delay": 200,
+        "next": [
+            "跳过扫荡",
+            "扫荡结束",
+            "次数不足"
+        ]
+    },
+    "跳过扫荡": {
+        "recognition": "OCR",
+        "expected": "跳过",
+        "roi": [
+            467,
+            557,
+            350,
+            100
+        ],
+        "action": "Click",
+        "post_delay": 200,
+        "next": [
+            "扫荡结束",
+            "跳过扫荡"
+        ]
+    },
+    "扫荡结束": {
+        "recognition": "TemplateMatch",
+        "template": "确认.png",
+        "roi": [
+            467,
+            557,
+            350,
+            100
+        ],
+        "pre_delay": 200,
+        "action": "Click",
+        "post_delay": 200,
+        "next": "返回主页"
+    },
+    "次数不足": {
+        "recognition": "OCR",
+        "expected": "不足",
+        "roi": [
+            469,
+            294,
+            333,
+            140
+        ],
+        "post_delay": 200,
+        "next": "返回主页"
+    },
+    "未解锁": {
+        "recognition": "OCR",
+        "expected": "解锁",
+        "roi": [
+            492,
+            316,
+            293,
+            95
+        ],
+        "post_delay": 200,
+        "next": [
+            "返回主页"
+        ]
+    },
+    "关闭游戏": {
+        "action": "StopApp",
+        "package": "com.feimo.hazeworld.mumu"
     }
 }
-"升级",
-"网络异常"

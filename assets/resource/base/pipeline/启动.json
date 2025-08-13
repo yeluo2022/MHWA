@@ -2,6 +2,7 @@
     "进入主页": {
         "next": [
             "主界面",
+            "签到完成",
             "点击签到",
             "登录界面",
             "活动公告",
@@ -12,10 +13,12 @@
     "启动游戏": {
         "action": "StartApp",
         "package": "com.feimo.hazeworld.mumu",
-        "on_error": "进入主页",
         "next": [
             "下载资源",
-            "活动公告",
+            "活动公告"
+        ],
+        "interrupt": [
+            "断线重连",
             "启动游戏"
         ]
     },
@@ -105,14 +108,15 @@
         ]
     },
     "签到完成": {
-        "recognition": "OCR",
-        "expected": "已签到",
+        "recognition": "TemplateMatch",
+        "template": "已签到.png",
         "roi": [
-            1061,
-            605,
-            194,
-            44
+            1027,
+            584,
+            247,
+            80
         ],
+        "pre_wait_freezes": 200,
         "action": "Click",
         "target": [
             16,
@@ -120,6 +124,8 @@
             142,
             33
         ],
+        "post_delay": 1000,
+        "on_error": "返回主页",
         "next": [
             "主界面",
             "签到完成"
