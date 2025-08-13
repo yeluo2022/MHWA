@@ -125,7 +125,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: MCCA-win-${{ matrix.arch }}
+          name: MHWA-win-${{ matrix.arch }}
           path: "install"
 
   linux:
@@ -184,7 +184,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: MCCA-linux-${{ matrix.arch }}
+          name: MHWA-linux-${{ matrix.arch }}
           path: "install"
 
   macos:
@@ -254,7 +254,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: MCCA-macos-${{ matrix.arch }}
+          name: MHWA-macos-${{ matrix.arch }}
           path: "install"
 
   changelog:
