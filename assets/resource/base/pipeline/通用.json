@@ -76,6 +76,19 @@
             35
         ]
     },
+    "返回": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "返回键.png",
+        "roi": [
+            2,
+            2,
+            200,
+            76
+        ],
+        "post_delay": 2000,
+        "action": "Click"
+    },
     "返回主页": {
         "recognition": "TemplateMatch",
         "template": "返回键.png",
@@ -85,7 +98,7 @@
             200,
             76
         ],
-        "post_delay": 1000,
+        "post_delay": 2000,
         "action": "Click",
         "next": [
             "主界面",

@@ -4,8 +4,10 @@
             "任务奖励",
             "通行证奖励",
             "邮箱奖励",
-            "支援角色友情币",
-            "返回主页"
+            "支援角色友情币"
+        ],
+        "interrupt": [
+            "返回"
         ]
     },
     "任务奖励": {
@@ -18,44 +20,66 @@
             85
         ],
         "action": "Click",
-        "post_delay": 500,
+        "post_wait_freezes": 200,
         "next": [
-            "任务"
-        ]
-    },
-    "任务": {
-        "next": [
-            "一键领取",
+            "任务奖励领取",
+            "领取进度奖励",
             "结束每日"
-        ],
-        "interrupt": [
-            "点击红点"
         ]
     },
-    "点击红点": {
+    "任务奖励领取": {
         "recognition": "TemplateMatch",
         "template": "红点.png",
         "roi": [
-            27,
-            100,
-            919,
-            610
+            30,
+            126,
+            256,
+            280
         ],
         "action": "Click",
-        "post_delay": 200,
-        "next": "获得资源"
+        "pre_wait_freezes": 200,
+        "post_wait_freezes": 200,
+        "next": [
+            "一键领取",
+            "领取进度奖励",
+            "结束每日"
+        ]
+    },
+    "领取进度奖励": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "红点.png",
+        "roi": [
+            353,
+            607,
+            596,
+            97
+        ],
+        "action": "Click",
+        "next": [
+            "获得资源",
+            "任务奖励领取"
+        ]
     },
     "结束每日": {
         "recognition": "TemplateMatch",
         "template": "红点.png",
+        "roi": [
+            37,
+            114,
+            914,
+            588
+        ],
         "inverse": true,
         "threshold": 0.9,
         "post_delay": 200,
         "next": [
-            "返回主页",
             "通行证奖励",
             "邮箱奖励",
             "支援角色友情币"
+        ],
+        "interrupt": [
+            "返回"
         ]
     },
     "通行证奖励": {
@@ -68,44 +92,61 @@
             93
         ],
         "action": "Click",
-        "post_delay": 500,
+        "post_wait_freezes": 200,
         "next": [
-            "通行证任务"
+            "一键领取",
+            "通行证任务",
+            "退出通行证"
         ]
     },
     "通行证任务": {
-        "next": [
-            "结束通行证任务1"
-        ],
-        "interrupt": [
-            "识别红点"
-        ]
-    },
-    "识别红点": {
-        "recognition": "TemplateMatch",
-        "template": "红点.png",
+        "recognition": "OCR",
+        "expected": "任务",
         "roi": [
-            39,
-            87,
-            976,
-            622
+            784,
+            629,
+            192,
+            64
         ],
         "action": "Click",
-        "post_delay": 200,
+        "pre_wait_freezes": 200,
         "next": [
             "一键领取",
-            "识别红点"
+            "领取通行证奖励",
+            "通行证任务"
         ]
     },
-    "结束通行证任务1": {
-        "recognition": "TemplateMatch",
-        "template": "红点.png",
-        "inverse": true,
+    "领取通行证奖励": {
+        "recognition": "OCR",
+        "expected": "奖励",
+        "roi": [
+            784,
+            629,
+            192,
+            64
+        ],
+        "action": "Click",
+        "post_wait_freezes": 200,
         "next": [
             "一键领取",
-            "返回主页",
+            "退出通行证",
+            "领取通行证奖励"
+        ]
+    },
+    "退出通行证": {
+        "recognition": "TemplateMatch",
+        "template": "一键领取结束.png",
+        "roi": [
+            1004,
+            610,
+            249,
+            93
+        ],
+        "next": [
+            "返回",
             "邮箱奖励",
-            "支援角色友情币"
+            "支援角色友情币",
+            "主界面"
         ]
     },
     "邮箱奖励": {
@@ -118,8 +159,9 @@
             60
         ],
         "action": "Click",
-        "post_delay": 500,
+        "post_wait_freezes": 200,
         "next": [
+            "邮箱-领取-结束",
             "邮箱-领取",
             "支援角色友情币"
         ]
@@ -134,6 +176,7 @@
             41
         ],
         "action": "Click",
+        "post_wait_freezes": 200,
         "next": [
             "获得资源",
             "邮箱-领取-结束",
@@ -149,9 +192,12 @@
             220,
             41
         ],
+        "post_wait_freezes": 200,
         "next": [
-            "返回主页",
             "支援角色友情币"
+        ],
+        "interrupt": [
+            "返回"
         ]
     },
     "支援角色友情币": {
@@ -164,7 +210,7 @@
             46
         ],
         "action": "Click",
-        "post_delay": 500,
+        "post_wait_freezes": 200,
         "next": [
             "进入支援角色",
             "支援角色友情币"
@@ -183,51 +229,59 @@
             335,
             85
         ],
-        "post_delay": 500,
+        "post_wait_freezes": 200,
         "next": [
-            "获得友情币",
+            "领取友情币1",
             "进入支援角色"
         ]
     },
-    "获得友情币": {
+    "领取友情币1": {
         "recognition": "OCR",
+        "expected": "领取",
         "roi": [
-            213,
+            215,
+            152,
             148,
-            155,
-            440
+            132
         ],
-        "expected": "[1-9]\\d*",
-        "order_by": "Horizontal",
-        "index": 1,
         "action": "Click",
-        "target_offset": [
-            10,
-            10,
-            0,
-            30
-        ],
-        "pre_delay": 200,
-        "post_delay": 200,
+        "post_wait_freezes": 200,
         "next": [
             "获得资源",
-            "领取结束",
-            "获得友情币"
+            "领取友情币2",
+            "领取友情币1"
         ]
     },
-    "领取结束": {
+    "领取友情币2": {
         "recognition": "OCR",
-        "expected": [
-            "没有",
-            "已达上限"
-        ],
+        "expected": "领取",
         "roi": [
-            452,
-            315,
-            370,
-            85
+            218,
+            306,
+            141,
+            132
         ],
+        "action": "Click",
+        "post_wait_freezes": 200,
         "next": [
+            "获得资源",
+            "领取友情币3",
+            "领取友情币2"
+        ]
+    },
+    "领取友情币3": {
+        "recognition": "OCR",
+        "expected": "领取",
+        "roi": [
+            220,
+            454,
+            141,
+            129
+        ],
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "获得资源",
             "返回主页"
         ]
     }
