@@ -53,6 +53,15 @@
             427,
             57
         ],
+        "pre_wait_freezes": {
+            "target": [
+                117,
+                55,
+                1044,
+                602
+            ],
+            "time": 200
+        },
         "action": "Click",
         "target": [
             499,
@@ -75,6 +84,7 @@
             132,
             85
         ],
+        "threshold": 0.9,
         "action": "Click",
         "target": [
             569,
@@ -101,9 +111,26 @@
         "action": "Click",
         "post_delay": 1000,
         "next": [
+            "获得皮肤",
             "获得资源",
             "签到完成",
             "点击签到"
+        ]
+    },
+    "获得皮肤": {
+        "recognition": "OCR",
+        "expected": "跳过",
+        "roi": [
+            1144,
+            10,
+            122,
+            86
+        ],
+        "action": "Click",
+        "post_delay": 200,
+        "next": [
+            "签到完成",
+            "获得皮肤"
         ]
     },
     "签到完成": {
@@ -115,9 +142,9 @@
             247,
             80
         ],
-        "pre_wait_freezes": 200,
+        "post_delay": 200,
         "next": [
-            "返回主页",
+            "返回",
             "主界面",
             "签到完成"
         ]
@@ -130,7 +157,6 @@
             8,
             143,
             61
-        ],
-        "action": "StopTask"
+        ]
     }
 }
