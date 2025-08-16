@@ -1,0 +1,372 @@
+{
+    "商店资源购买": {
+        "next": [
+            "兑换商店",
+            "荣誉凭证"
+        ],
+        "interrupt": [
+            "进入商城"
+        ]
+    },
+    "进入商城": {
+        "recognition": "OCR",
+        "expected": "商城",
+        "roi": [
+            689,
+            640,
+            156,
+            71
+        ],
+        "action": "Click",
+        "post_wait_freezes": 200
+    },
+    "兑换商店": {
+        "next": "进入兑换商店",
+        "interrupt": "进入商城"
+    },
+    "进入兑换商店": {
+        "recognition": "OCR",
+        "expected": "兑换商店",
+        "roi": [
+            629,
+            79,
+            221,
+            107
+        ],
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "精英商店",
+            "后勤商店"
+        ]
+    },
+    "精英商店": {
+        "post_wait_freezes": 200,
+        "next": [
+            "精英商店代币过少",
+            "精英商店售罄",
+            "精英商店购买"
+        ],
+        "interrupt": "商城_水平左滑"
+    },
+    "精英商店购买": {
+        "recognition": "OCR",
+        "expected": [
+            "100",
+            "耀闪的残响",
+            "精英调度券",
+            "定向调度券",
+            "浓缩能量合剂",
+            "原始核心结晶",
+            "绝密报告资料",
+            "自选水晶",
+            "残响",
+            "原始核心"
+        ],
+        "roi": [
+            281,
+            180,
+            813,
+            517
+        ],
+        "threshold": 0.7,
+        "action": "Click",
+        "next": [
+            "精英商店_购买流程",
+            "精英商店购买"
+        ]
+    },
+    "精英商店_购买流程": {
+        "recognition": "TemplateMatch",
+        "template": "商城/商城_MAX.png",
+        "roi": [
+            760,
+            357,
+            122,
+            73
+        ],
+        "pre_wait_freezes": 200,
+        "action": "Click",
+        "next": [
+            "精英商店_确认",
+            "精英商店_购买流程"
+        ]
+    },
+    "精英商店_确认": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "roi": [
+            672,
+            467,
+            260,
+            74
+        ],
+        "action": "Click",
+        "next": [
+            "精英商店",
+            "精英商店_确认"
+        ],
+        "interrupt": "获得资源"
+    },
+    "精英商店代币过少": {
+        "recognition": "OCR",
+        "expected": "\\b[1-9]\\d{0,2}\\b",
+        "roi": [
+            863,
+            25,
+            109,
+            36
+        ],
+        "next": [
+            "后勤商店",
+            "荣誉凭证",
+            "返回主页"
+        ]
+    },
+    "精英商店售罄": {
+        "recognition": "OCR",
+        "expected": [
+            "已售罄",
+            "已售"
+        ],
+        "threshold": 0.5,
+        "roi": [
+            928,
+            189,
+            297,
+            490
+        ],
+        "next": [
+            "后勤商店",
+            "荣誉凭证",
+            "返回主页"
+        ]
+    },
+    "后勤商店": {
+        "recognition": "OCR",
+        "expected": "后勤商店",
+        "roi": [
+            14,
+            184,
+            216,
+            476
+        ],
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "后勤商店代币过少",
+            "后勤商店售罄",
+            "后勤商店购买"
+        ],
+        "interrupt": "商城_水平左滑"
+    },
+    "后勤商店购买": {
+        "recognition": "OCR",
+        "expected": [
+            "原始核心结晶",
+            "绝密报告资料",
+            "共鸣原石",
+            "共鸣结晶体",
+            "幻化星碎",
+            "自选水晶",
+            "原始核心"
+        ],
+        "roi": [
+            281,
+            180,
+            813,
+            517
+        ],
+        "threshold": 0.7,
+        "action": "Click",
+        "next": [
+            "后勤商店_购买流程",
+            "后勤商店购买"
+        ]
+    },
+    "后勤商店_购买流程": {
+        "recognition": "TemplateMatch",
+        "template": "商城/商城_MAX.png",
+        "roi": [
+            760,
+            357,
+            122,
+            73
+        ],
+        "pre_wait_freezes": 200,
+        "action": "Click",
+        "next": [
+            "后勤商店_确认",
+            "后勤商店_购买流程"
+        ]
+    },
+    "后勤商店_确认": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "roi": [
+            672,
+            467,
+            260,
+            74
+        ],
+        "action": "Click",
+        "next": [
+            "后勤商店",
+            "后勤商店_确认"
+        ],
+        "interrupt": "获得资源"
+    },
+    "后勤商店代币过少": {
+        "recognition": "OCR",
+        "expected": "\\b[1-9]\\d{0,2}\\b",
+        "roi": [
+            1046,
+            19,
+            147,
+            47
+        ],
+        "next": [
+            "荣誉凭证",
+            "返回主页"
+        ]
+    },
+    "后勤商店售罄": {
+        "recognition": "OCR",
+        "expected": [
+            "已售罄",
+            "已售"
+        ],
+        "threshold": 0.5,
+        "roi": [
+            283,
+            444,
+            251,
+            251
+        ],
+        "next": [
+            "荣誉凭证",
+            "返回主页"
+        ]
+    },
+    "荣誉凭证": {
+        "recognition": "OCR",
+        "expected": "荣誉凭证",
+        "roi": [
+            837,
+            81,
+            175,
+            94
+        ],
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "进入荣誉凭证",
+            "进入商城",
+            "荣誉凭证"
+        ]
+    },
+    "进入荣誉凭证": {
+        "post_wait_freezes": 200,
+        "next": [
+            "荣誉凭证代币过少",
+            "荣誉凭证售罄",
+            "荣誉凭证购买"
+        ],
+        "interrupt": "商城_水平左滑"
+    },
+    "荣誉凭证购买": {
+        "recognition": "OCR",
+        "expected": [
+            "定向调度券",
+            "共鸣原石",
+            "原始核心"
+        ],
+        "roi": [
+            281,
+            180,
+            813,
+            517
+        ],
+        "threshold": 0.7,
+        "action": "Click",
+        "next": [
+            "荣誉凭证_购买流程",
+            "荣誉凭证购买"
+        ]
+    },
+    "荣誉凭证_购买流程": {
+        "recognition": "TemplateMatch",
+        "template": "商城/商城_MAX.png",
+        "roi": [
+            760,
+            357,
+            122,
+            73
+        ],
+        "pre_wait_freezes": 200,
+        "action": "Click",
+        "next": [
+            "荣誉凭证_确认",
+            "荣誉凭证_购买流程"
+        ]
+    },
+    "荣誉凭证_确认": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "roi": [
+            672,
+            467,
+            260,
+            74
+        ],
+        "action": "Click",
+        "next": [
+            "荣誉凭证",
+            "荣誉凭证_确认"
+        ],
+        "interrupt": "获得资源"
+    },
+    "荣誉凭证代币过少": {
+        "recognition": "OCR",
+        "expected": "\\b[1-9]\\d{0,2}\\b",
+        "roi": [
+            1046,
+            19,
+            147,
+            47
+        ],
+        "next": "返回主页"
+    },
+    "荣誉凭证售罄": {
+        "recognition": "OCR",
+        "expected": [
+            "已售罄",
+            "已售"
+        ],
+        "threshold": 0.5,
+        "roi": [
+            850,
+            442,
+            278,
+            246
+        ],
+        "next": "返回主页"
+    },
+    "商城_水平左滑": {
+        "action": "Swipe",
+        "begin": [
+            1100,
+            427,
+            28,
+            28
+        ],
+        "end": [
+            1050,
+            428,
+            22,
+            26
+        ],
+        "duration": 100,
+        "post_wait_freezes": 300
+    }
+}

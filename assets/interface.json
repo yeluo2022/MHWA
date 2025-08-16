@@ -27,8 +27,8 @@
             "entry": "指挥室"
         },
         {
-            "name": "每日礼包",
-            "entry": "每日礼包"
+            "name": "每日免费礼包",
+            "entry": "每日免费礼包"
         },
         {
             "name": "演习",
@@ -66,6 +66,14 @@
                 "关卡选择"
             ],
             "doc": "作战暂时只支持最大次数扫荡"
+        },
+        {
+            "name": "商店资源购买",
+            "entry": "商店资源购买",
+            "option": [
+                "兑换商店（精英和后勤）",
+                "荣誉凭证"
+            ]
         },
         {
             "name": "关闭游戏",
@@ -436,6 +444,71 @@
                         },
                         "点击关卡": {
                             "template": "关卡-10.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "兑换商店（精英和后勤）": {
+            "cases": [
+                {
+                    "name": "关闭",
+                    "pipeline_override": {
+                        "兑换商店": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "仅精英商店",
+                    "pipeline_override": {
+                        "精英商店": {
+                            "enabled": true
+                        },
+                        "后勤商店": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "仅后勤商店",
+                    "pipeline_override": {
+                        "精英商店": {
+                            "enabled": false
+                        },
+                        "后勤商店": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "开启",
+                    "pipeline_override": {
+                        "精英商店": {
+                            "enabled": true
+                        },
+                        "后勤商店": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "荣誉凭证": {
+            "cases": [
+                {
+                    "name": "开启",
+                    "pipeline_override": {
+                        "荣誉凭证": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "关闭",
+                    "pipeline_override": {
+                        "荣誉凭证": {
+                            "enabled": false
                         }
                     }
                 }

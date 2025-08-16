@@ -24,7 +24,6 @@
         ]
     },
     "获得资源": {
-        "is_sub": true,
         "recognition": "OCR",
         "expected": "获得资源",
         "roi": [

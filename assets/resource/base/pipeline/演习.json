@@ -191,9 +191,7 @@
         "post_wait_freezes": 500,
         "next": [
             "无票",
-            "使用票",
-            "票最大值",
-            "确认"
+            "使用票"
         ]
     },
     "无票": {
@@ -250,11 +248,11 @@
         "pre_wait_freezes": 500,
         "post_wait_freezes": 500,
         "next": [
-            "确认",
+            "演习_确认",
             "票最大值"
         ]
     },
-    "确认": {
+    "演习_确认": {
         "recognition": "TemplateMatch",
         "template": "确认.png",
         "roi": [
