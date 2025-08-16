@@ -144,11 +144,11 @@
             93
         ],
         "next": [
-            "返回",
             "邮箱奖励",
             "支援角色友情币",
             "主界面"
-        ]
+        ],
+        "interrupt": "返回"
     },
     "邮箱奖励": {
         "recognition": "TemplateMatch",
@@ -200,7 +200,7 @@
             220,
             41
         ],
-        "post_wait_freezes": 200,
+        "post_wait_freezes": 1000,
         "next": [
             "支援角色友情币"
         ],
@@ -255,10 +255,10 @@
         "action": "Click",
         "post_wait_freezes": 200,
         "next": [
-            "获得资源",
             "领取友情币2",
             "领取友情币1"
-        ]
+        ],
+        "interrupt": "获得资源"
     },
     "领取友情币2": {
         "recognition": "OCR",
@@ -272,10 +272,10 @@
         "action": "Click",
         "post_wait_freezes": 200,
         "next": [
-            "获得资源",
             "领取友情币3",
             "领取友情币2"
-        ]
+        ],
+        "interrupt": "获得资源"
     },
     "领取友情币3": {
         "recognition": "OCR",
@@ -289,8 +289,8 @@
         "action": "Click",
         "post_wait_freezes": 200,
         "next": [
-            "获得资源",
             "返回主页"
-        ]
+        ],
+        "interrupt": "获得资源"
     }
 }

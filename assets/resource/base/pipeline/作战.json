@@ -1,13 +1,9 @@
 {
     "作战": {
         "next": [
-            "进入作战",
-            "进入资源",
-            "选择资源",
-            "选择关卡",
-            "关卡扫荡",
-            "返回主页"
-        ]
+            "进入作战"
+        ],
+        "interrupt": "返回主页"
     },
     "进入作战": {
         "recognition": "OCR",
@@ -20,7 +16,6 @@
         ],
         "action": "Click",
         "post_wait_freezes": 1000,
-        "on_error": "返回主页",
         "next": [
             "进入资源",
             "进入作战"
@@ -44,6 +39,7 @@
     },
     "选择资源": {
         "recognition": "TemplateMatch",
+        "template": "异兽清缴.png",
         "roi": [
             103,
             395,
@@ -60,6 +56,7 @@
     },
     "选择关卡": {
         "recognition": "OCR",
+        "expected": "经验",
         "roi": [
             11,
             82,
@@ -67,7 +64,7 @@
             631
         ],
         "action": "Click",
-        "post_delay": 300,
+        "post_wait_freezes": 200,
         "next": [
             "关卡扫荡",
             "选择关卡"
@@ -106,6 +103,7 @@
         "post_delay": 1000
     },
     "关卡扫荡": {
+        "post_wait_freezes": 200,
         "next": [
             "点击关卡"
         ],
@@ -113,6 +111,7 @@
     },
     "点击关卡": {
         "recognition": "TemplateMatch",
+        "template": "关卡-10.png",
         "threshold": 0.9,
         "roi": [
             135,

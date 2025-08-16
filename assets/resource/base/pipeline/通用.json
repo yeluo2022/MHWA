@@ -32,7 +32,7 @@
             303,
             105
         ],
-        "pre_delay": 500,
+        "pre_wait_freezes": 500,
         "action": "Click",
         "target": [
             519,
@@ -40,7 +40,7 @@
             133,
             59
         ],
-        "post_delay": 1000
+        "post_wait_freezes": 500
     },
     "一键领取结束": {
         "recognition": "TemplateMatch",
