@@ -12,7 +12,7 @@
 3. 作战
 4. 演习
 5. 指挥室领取
-6. 奖励领取，
+6. 奖励领取
 7. 商店资源购买
 8. 好友点赞
 9. 关闭游戏
@@ -47,6 +47,29 @@
 ## 开发相关
 
 - [MaaFramework 快速开始](https://github.com/MaaXYZ/MaaFramework/blob/main/docs/zh_cn/1.1-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B.md)
+
+ 完成开发后，上传您的代码并发布版本。
+
+    ```bash
+    # 配置 git 信息（仅第一次需要，后续不用再配置）
+    git config user.name "您的 GitHub 昵称"
+    git config user.email "您的 GitHub 邮箱"
+    
+    # 提交修改
+    git add .
+    git commit -m "XX 新功能"
+    git push origin HEAD -u
+    ```
+
+ 发布您的版本
+
+    需要**先**修改仓库设置 `Settings` - `Actions` - `General` - `Read and write permissions` - `Save`
+
+    ```bash
+    # CI 检测到 tag 会自动进行发版
+    git tag v1.0.0
+    git push origin v1.0.0
+    ```
 
 ## Join us
 
