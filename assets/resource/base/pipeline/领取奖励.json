@@ -186,10 +186,10 @@
         "action": "Click",
         "post_wait_freezes": 200,
         "next": [
-            "获得资源",
             "邮箱-领取",
             "邮箱-领取-结束"
-        ]
+        ],
+        "interrupt": "获得资源"
     },
     "邮箱-领取-结束": {
         "recognition": "OCR",
