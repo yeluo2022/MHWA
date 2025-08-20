@@ -253,7 +253,7 @@
             132
         ],
         "action": "Click",
-        "post_wait_freezes": 200,
+        "post_wait_freezes": 1000,
         "next": [
             "领取友情币2",
             "领取友情币1"
@@ -270,7 +270,7 @@
             132
         ],
         "action": "Click",
-        "post_wait_freezes": 200,
+        "post_wait_freezes": 1000,
         "next": [
             "领取友情币3",
             "领取友情币2"
@@ -287,7 +287,7 @@
             129
         ],
         "action": "Click",
-        "post_wait_freezes": 200,
+        "post_wait_freezes": 1000,
         "next": [
             "返回主页"
         ],
