@@ -49,15 +49,15 @@
             271,
             72
         ],
-        "pre_delay": 1000,
+        "pre_delay": 500,
         "action": "Click",
-        "post_delay": 500,
+        "timeout": 120000,
         "next": [
-            "获得资源",
             "无法进攻",
             "扫荡结算",
             "代理完成"
-        ]
+        ],
+        "interrupt": "获得资源"
     },
     "无法进攻": {
         "recognition": "OCR",
@@ -68,7 +68,6 @@
             797,
             74
         ],
-        "action": "StopTask",
         "next": [
             "返回主页"
         ]
@@ -82,9 +81,8 @@
             274,
             73
         ],
-        "pre_delay": 200,
+        "pre_wait_freezes": 200,
         "action": "Click",
-        "timeout": 120000,
         "next": [
             "无演习次数",
             "代理作战",

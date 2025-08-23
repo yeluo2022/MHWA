@@ -173,31 +173,79 @@
                 743,
                 347
             ],
-            "time": 200
+            "time": 1000
         },
         "timeout": 10000,
         "on_error": "返回主页",
         "next": [
             "邮箱-领取-结束",
-            "邮箱-领取"
+            "邮箱-点击邮件",
+            "邮箱奖励"
+        ]
+    },
+    "邮箱-点击邮件": {
+        "recognition": "ColorMatch",
+        "lower": [
+            200,
+            200,
+            200
+        ],
+        "upper": [
+            255,
+            255,
+            255
+        ],
+        "roi": [
+            34,
+            90,
+            402,
+            482
+        ],
+        "count": 1000,
+        "connected": true,
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "邮箱-领取",
+            "邮箱-点击邮件"
         ]
     },
     "邮箱-领取": {
         "recognition": "OCR",
         "expected": "领取",
         "roi": [
-            987,
-            635,
-            220,
-            41
+            921,
+            592,
+            346,
+            111
         ],
+        "post_wait_freezes": 1000,
         "action": "Click",
-        "post_wait_freezes": 200,
         "next": [
-            "邮箱-领取-结束",
-            "邮箱-领取"
+            "邮箱-获得资源",
+            "邮箱-点击邮件",
+            "邮箱-领取-结束"
+        ]
+    },
+    "邮箱-获得资源": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "获得资源",
+        "roi": [
+            492,
+            214,
+            303,
+            105
         ],
-        "interrupt": "获得资源"
+        "pre_wait_freezes": 500,
+        "action": "Click",
+        "target": [
+            519,
+            15,
+            133,
+            59
+        ],
+        "post_wait_freezes": 500
     },
     "邮箱-领取-结束": {
         "recognition": "OCR",
